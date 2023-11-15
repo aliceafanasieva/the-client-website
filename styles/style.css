@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono&family=UnifrakturMaguntia&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container{
+    min-width: 100vh;
+    min-height: 10vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+section{
+    padding: 60px 200px 0;
+    width: 900px;
+}
+
+/* Wrapper */
+
+.wrapper{
+    margin: 0 auto;
+    padding: 0 0 50px;
+}
+
+/* Box met text*/ 
+
+.intro-box{
+    margin: 0 auto;
+    height: 100px;
+  }
+
+.intro-box p{
+    font-family: 'Sometype Mono', monospace;
+    font-size: 13px;
+    width: 450px;
+}
+
+/* Grids */
+
+.grid-container{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 300px 300px 300px;
+}
+
+/* Navigation bar */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid;
+}
+
+nav {
+    flex: 1;
+    text-align: left;
+}
+
+nav,
+ul{
+    white-space: nowrap;
+}
+
+nav,
+ul,
+li{
+    margin-left: 15px;
+    margin-top: 8px;
+    font-size: 11px;
+    list-style: none;
+    display: inline-block;
+}
+
+nav a{
+    font-weight: 400;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+nav a:hover{
+    font-weight: 900;
+}
+
+/* Ik wil dat de taal optie in navigatie bar andere dikte heeft dan die met een link naar De Hallen 
+( maar dan alleen het niet actief is ) */
+
+.language a{
+    font-weight: 300;
+}
+
+.pages li{
+    font-family: 'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,Sans-Serif;
+    font-size: 10px;
+    padding: 0 70px 15px;
+    letter-spacing: .3px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* Headers */
+
+h1{
+    --body-font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 56px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
