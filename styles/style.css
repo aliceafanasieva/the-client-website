@@ -23,7 +23,7 @@ header {
 
 section {
     padding: 60px 200px 0;
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 10rem auto;
 }
 
@@ -51,8 +51,37 @@ section {
 
 .grid-container {
     display: grid;
-    margin: 0 auto;
-    grid-template-columns: 300px 300px 300px;
+    margin: 40px auto;
+    max-width: 100%;
+    column-gap: 30px;
+    row-gap: 70px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+article img {
+    width: 100%;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1600px) {
+    .grid-container {
+        display: grid;
+        margin: 40px auto;
+        max-width: 100%;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        display: grid;
+        margin: 40px auto;
+        max-width: 100%;
+        gap: 30px;
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Navigation bar */
