@@ -1,180 +1,590 @@
 @import url('https://fonts.googleapis.com/css2?family=Sometype+Mono&family=UnifrakturMaguntia&display=swap');
 
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+/* Custom Properties */
+:root {
+    /* Fonts */
+    --main-font-stack: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+    --secundary-font-stack: 'Sometype Mono', monospace;
+    /* Colors */
+    --background-color: rgb(255, 255, 255);
+    --base-text-color: rgb(0,0,0);
+    --active-button-text-color: rgb(255, 255, 255);
+    --active-button-color: rgb(0, 0, 0);
+    --primary-decorative-color: rgb(21, 173, 255);
+    --second-decorative-color: rgb(44, 255, 44);
+    --third-decorative-color: rgb(183, 255, 115);
+    --border-color: rgb(0, 0, 0);
+    /* Titles */
+    --heading-titles-font-size: 1.953rem;
+    --heading-titles-font-weight: 500;
+    --tabs-titles-font-size: 0.97rem;
+    --tabs-titles-font-weight: 400;
+    /* Navigation */
+    --nav-font-size: 0.8rem;
+    --nav-hallen-font-size: 0.88rem;
+    /* Form font size */
+    --checkbox-font-size: 0.9rem;
+    --input-font-size: 0.85rem;
+    --button-font-size: 0.8rem;
+    --small-text-font-size: 0.8rem;
 }
 
-.body-4 {
-    height: 100%;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font-stack);
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--base-text-color);
 }
 
 body {
+    /*cursor: none;*/
     margin: 0;
-    min-height: 100%;
+    min-height: 100vh;
+    min-width: 320px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
+
+/*
+#invertedcursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 100;
+  transition: transform .2s;
+}*/
+
+
+/* Navigation bar */
 
 header {
     position: sticky;
     top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5% 15px;
+    overflow: hidden;
+    background-color: var(--background-color);
+    transition: ease .40s;
+    border-bottom: 1.5px solid var(--border-color);
+    z-index: 10000;
 }
 
-section {
-    padding: 60px 200px 0;
-    max-width: 1800px;
-    margin: 10rem auto;
+/* Logo is hidden on the home page, but will be shown in secondary pages */
+.logo {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: none;
 }
 
-/* Wrapper */
+.items{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
 
-.wrapper {
+.item {
+    text-transform: uppercase;
+    font-size: var(--nav-font-size);
+    margin: 10px 25px;
+    display: inline-block;
+}
+
+/* A link to De Hallen website as a way of showing the "connection" between two organisations */
+.dehallen {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: var(--nav-hallen-font-size);
+    order: 2;
+    margin: 10px 0px 10px 30px;
+}
+
+/* Menu icon is hidden on desktop layout, but will appear by screen width < 1020px */
+#menu-icon {
+    color: #000;
+    font-size: 25px;
+    font-weight: 100;
+    cursor: pointer;
+    display: none;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
     margin: 0 auto;
-    padding: 0 0 50px;
+    justify-content: space-between;
+    order: 1;
 }
 
-/* Box met introductie text */ 
+.nav a, .dehallen a {
+    list-style: none;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--base-text-color);
+    white-space: nowrap;
+}
 
-.intro-box {
-    height: 100px;
-    max-width: 35em;
-  }
 
-.intro-box p {
-    font-family: 'Sometype Mono', monospace;
-    font-size: 17px;
+/* Making a smooth underline animation */
+
+.items a::after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: var(--base-text-color);
+    transition: 300ms;
+}
+  
+.items a:hover::after {
     width: 100%;
 }
 
-/* Grids */
 
-.grid-container {
-    display: grid;
-    margin: 40px auto;
+/* Hover for a link to De Hallen */
+
+.dehallen a:hover {
+    color: var(--third-decorative-color);
+}
+
+
+/* Hier begin ik met homepagina zelf */
+
+section {
+    padding: 100px 18% 0;
+}
+
+.home {
+    display: inline-block;
+    max-width: 1600px;
+    margin: 0px auto;
+}
+
+
+/* Flex-box met introductie titel, text en plaatje */ 
+
+.intro-box {
+    margin: 0 auto;
+    padding: 0 0 80px;
+    display: flex;
+}
+
+.intro-box-text {
+    flex: 1 1 auto;
+    padding: 0px 30px 0px 0px;
+}
+
+.intro-title {
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.intro-box p {
+    height: 100px;
+    max-width: 29em;
+    font-family: var(--secundary-font-stack);
+    font-size: 17px;
+    line-height: 1.5em;
+    text-align: justify;
+    width: 100%;
+}
+
+.img-box{
+    flex: 0 0 350px;
+    margin-top: 30px;
+}
+
+.img-box img{
     max-width: 100%;
-    column-gap: 30px;
-    row-gap: 70px;
-    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/* Tabs die Vraag- Aanbod van initiatieven laten zien */
+
+.tabs-container {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin: 0 0 50px;
+}
+
+.tabs-container button {
+    font-size: var(--tabs-titles-font-size);
+    font-weight: var(--tabs-titles-font-weight);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    outline: none;
+    padding: 10px 32px 15px;
+    text-transform: uppercase;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.tabs-container :nth-child(2) {
+    border-left: none;
+}
+
+.bx{
+    background: transparent;
+    font-size: 23px;
+    margin: 0 1em 0 0;
+    transition: 0.3s;
+}
+
+.tabs-container button:hover{
+    background-color: var(--active-button-color);
+    color: var(--active-button-text-color);
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+}
+
+.tabs-container button:hover .bx{
+    color: var(--active-button-text-color);
+}
+
+.container-initiatieven {
+    overflow: hidden;
+    position: relative;
+    z-index: 9999;
+}
+
+/* 
+---------------------------------------------------------------------------------------
+    VRAGEN - HOE KAN IK HET ZO DOEN DAT HET NIET BOVEN DE NAVIGATIE KOMT STAAN? 
+---------------------------------------------------------------------------------------
+*/
+
+/*
+.container-initiatieven .content {
+    transform: translateX(100%);
+    position: absolute;
+}
+
+/* Actief Aanbod Tab */
+
+/*
+#content-aanbod {
+    transform: translateX(0px);
+}
+
+#btn1, #btn1 .bx{
+    background-color: var(--active-button-color);
+    color: var(--active-button-text-color);
+}
+*/
+/* Actief Vraag Tab */
+
+
+
+/* Grid */
+
+.grid-container-initiatieven {
+    display: grid;
+    margin: 55px auto 125px;
+    width: 100%;
+    column-gap: 7%;
+    row-gap: 10%;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 article img {
     width: 100%;
+    height: 80%;
 }
 
-/* Responsive */
 
-@media screen and (max-width: 1600px) {
-    .grid-container {
-        display: grid;
-        margin: 40px auto;
-        max-width: 100%;
-        gap: 30px;
-        grid-template-columns: 1fr 1fr;
-    }
+/* Button */
+
+.button {
+    padding: 10px 35px;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: var(--button-font-size);
+  }
+
+.button a{
+    background-color: var(--background-color); 
+    color: var(--base-text-color); 
 }
 
-@media screen and (max-width: 1000px) {
-    .grid-container {
-        display: grid;
-        margin: 40px auto;
-        max-width: 100%;
-        gap: 30px;
-        grid-template-columns: 1fr;
-    }
+.button:hover {
+    background-color: var(--active-button-color);
+    color: var(--active-button-text-color);
 }
 
-/* Navigation bar */
 
-.navbar {
-    width: 100%;
+/* Button Alles Bekijken */
+
+.Button-See-all {
+    margin: 0 auto;
+}
+
+.button-box{
+    text-align: center;
+    margin: 20px 50px 100px 50px;
+}
+
+/* Button Submit */
+
+.Button-Submit {
+    border: 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-left: 4%;
+    padding: 5px 3px;
+}
+
+.Button-Submit:hover {
+    background-color: transparent;
+    border-bottom: 1px solid var(--third-decorative-color);
+    color: var(--third-decorative-color);
+}
+
+/* Button Login & Register */
+
+
+.Button_Signin {
+    margin: 0px;
+}
+
+
+/* Large Heading */
+
+.Heading-large{
+    font-size: var(--heading-titles-font-size);
+    text-transform: uppercase;
+    font-weight: var(--heading-titles-font-weight);
+    margin-bottom: 10px;
+}
+
+
+/* Contact Form */
+
+.contact { 
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 80px 0;
     display: flex;
-    border-bottom: 2px solid;
 }
 
-nav {
-    flex: 1;
+.contact-form, .contact-text {
+    width: 50%;
+    overflow: hidden;
+}
+
+.contact-text p {
+    font-family: var(--secundary-font-stack);
+}
+
+.contact-form form {
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-form input{
+    font-size: var(--input-font-size);
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    outline: none;
+    background-color: transparent;
+    width: 20rem;
+    padding: 5px 10px;
+}
+
+.contact-form button{
     text-align: left;
 }
 
-nav,
-ul {
-    white-space: nowrap;
-}
 
-nav,
-ul,
-li {
-    margin-left: 15px;
-    margin-top: 8px;
-    font-size: 11px;
-    list-style: none;
-    display: inline-block;
-}
+/* Checkbox */
 
-nav a {
-    font-weight: 400;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-
-nav a:hover {
-    font-weight: 900;
-}
-
-/* Ik wil dat de taal optie in navigatie bar andere dikte heeft dan die met een link naar De Hallen 
-( maar dan alleen het niet actief is ) */
-
-.language a {
-    font-weight: 300;
-}
-
-.pages li {
-    font-family: 'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,Sans-Serif;
-    font-size: 10px;
-    padding: 0 70px 15px;
-    letter-spacing: .3px;
+.checkbox-container {
+    display: block;
     position: relative;
-    text-transform: uppercase;
-}
-
-/* Headers */
-
-.homepage_title {
-    --body-font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-size: 56px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.title_initiatives_view {
-    margin-bottom: 1em;
-    border-bottom: 2px solid;
-}
-
-/* Buttons */
-.button {
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.2s;
+    padding-left: 1.5rem;
     cursor: pointer;
-  }
-
-/* Button zie alles */
-
-.Button_see_all_initiatives {
-    background-color: white; 
-    color: black; 
-    border: 1px solid #000000;
-  }
+    font-size: var(--checkbox-font-size);
+}
   
-  .Button_see_all_initiatives:hover {
+  /* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+}
+  
+  /* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+  
+  /* When the checkbox is checked, add a black background */
+.checkbox-container input:checked ~ .checkmark {
     background-color: #000000;
-    color: white;
-  }
+}
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  /* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+  /* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 4.5px;
+    top: 2px;
+    width: 4px;
+    height: 8.5px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* Sign-in scherm Form */
+
+.sign-in {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 80px 0;
+    display: flex;
+}
+
+.signin-form, .signin-text {
+    width: 50%;
+    overflow: hidden;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 1.5rem;
+}
+
+.signin-form label {
+    margin-bottom: 1.3rem;
+}
+
+.signin-form input{
+    width: 100%;
+    font-size: var(--input-font-size);
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    outline: none;
+    background-color: transparent;
+    padding: 5px 10px;
+    margin-bottom: 1.3rem;
+}
+
+.signin-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signin-buttons p{
+    font-size: var(--small-text-font-size);
+}
+
+.signin-text p {
+    font-family: var(--secundary-font-stack);
+}
+
+
+/* Responsive: Tablet */
+
+@media (max-width: 1300px) {
+    .grid-container-initiatieven {
+        display: grid;
+        margin: 55px auto 20%;
+        max-width: 100%;
+        column-gap: 7%;
+        row-gap: 5%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1020px) {
+    #menu-icon {
+        color: var(--base-text-color);
+        font-size: 25px;
+        font-weight: 100;
+        cursor: pointer;
+        display: block;
+    }
+
+    header{
+        position: absolute;
+        top: 0; 
+        right: 0;
+        width: 270px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color);
+        transition: ease .40s;
+        border-bottom: none;
+    }
+
+    .items{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Responsive: Mobile */
+
+@media screen and (max-width: 600px) {
+    .grid-container-initiatieven {
+        display: grid;
+        margin: 55px auto 20%;
+        max-width: 100%;
+        column-gap: 7%;
+        row-gap: 2%;
+        grid-template-columns: repeat(2, 200px);
+    }
+}

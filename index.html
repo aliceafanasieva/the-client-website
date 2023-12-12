@@ -6,96 +6,229 @@
     <link rel="stylesheet" href="styles/style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1"> 
     <title>Platform Buurtinitiatieven</title>
+    <!-- Icons source Boxicons.com -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="js_files/cursor.js"></script>
+    <script src="js_files/tabs.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
 </head>
 
+
 <!-- Zichtbaar website -->
-<body class="body-4">
+<body>
+
+    <!--
+    <script>
+        document.body.onmousemove = function(e) {
+        document.documentElement.style.setProperty (
+            '--x', (
+            e.clientX+window.scrollX
+            )
+            + 'px'
+        );
+        document.documentElement.style.setProperty (
+            '--y', (
+            e.clientY+window.scrollY
+            ) 
+            + 'px'
+        );
+        }
+    </script>
+    -->
+
+    <div id="invertedcursor"></div>
+
+    <!-- Header -->
     <header>
+        <a href="" class="logo">Buurtinitiatieven Amsterdam West</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <li class="dehallen"><a href="https://dehallen-amsterdam.nl" target="_blank">De Hallen</a></li>
         <!-- Hier de navigatie bar boven de website -->
-        <div class="navbar">
-            <nav>
-                <ul class="language">
-                    <li><a href="">NL</a></li>
-                    <li><a href="">EN</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://dehallen-amsterdam.nl" target="_blank">De Hallen</a></li>
-                </ul>
-                <ul class="pages">
-                    <li><a href="">Initiatieven</a></li>
-                    <li><a href="">Aanvraag indienen</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Account</a></li>
-                </ul>
-            </nav>
-        </div>
+        <ul class="nav">
+            <ul class="items">
+                <li class="item"><a href="">Over ons</a></li>
+                <li class="item"><a href="">Initiatieven</a></li>
+                <li class="item"><a href="">Aanvraag indienen</a></li>
+                <li class="item"><a href="">Contact</a></li>
+                <li class="item"><a href="">Account</a></li>
+            </ul>
+        </ul>
     </header>
-    <main>
-        <section>
-            <div class="wrapper">
-                <div class="homepage_title">platform<br>buurtinitiatieven<br>amsterdam west</div>
-            </div>
+
+    <!--- link to js -->
+    <script type="text/javasript" src="js/script.js"></script>
+
+    <!-- Home section -->
+    <section class="home" id="home">
             <div class="intro-box">
-                <p>
-                Dit is de platform voor de buurtbewoners van Amsterdam West waar ze 
-                de aanbod van de initiatieven in de buurt kunnen bekijken, contact 
-                met elkaar kunnen opnemen en eigen initiatieven kunnen voorstellen. 
-                </p>
+                <div class="intro-box-text">
+                    <div class="intro-title">platform<br>buurtinitiatieven<br>amsterdam west</div>
+                    <p>
+                        Dit is de digitale platform speciaal gemaakt om de buurtbewoners van Amsterdam West met elkaar 
+                        te verbinden. Hier kunt u de vraag/aanbod van de initiatieven in deze buurt bekijken, contact 
+                        opnemen met de buren, elkaar helpen en ook eigen initiatieven voorstellen. 
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="img/people_dance.png" alt="featured img">
+                </div>
             </div>
-            <div class="title_initiatives_view" style="text-transform: uppercase; text-align: center;" >
-                aanbod van initiatieven
+            <div class="container-initiatieven">
+                <div class="tabs-container">
+                    <button id="btn1">
+                        <i class="bx bx-message-add"></i>
+                        aanbod initiatieven
+                    </button>
+                    <button id="btn2">
+                        <i class="bx bx-search-alt"></i>
+                        vraag initiatieven
+                    </button>
+                </div>
+                <!-- Hier de overzicht van initiatieven -->
+                <div id="content-aanbod" class="content">
+                    <div class="grid-container-initiatieven">
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Academie van de Stad</h3>
+                                <p>Koppelen van studenten aan praktijkopdrachten.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Actief computer centrum west</h3>
+                                <p>Computerlessen alle nivea’s.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Aknarij</h3>
+                                <p>
+                                    Participatie/integratie bevorderen bij Marokkanse achterban.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Amsta</h3>
+                                <p>Zorg voor ouderen en gehandicapten.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Badhuis en Sauna Da Costa</h3>
+                                <p>Betaalbare en toegankelijke sauna door vrijwilligers</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Be connected</h3>
+                                <p>Jongerenplatform voor vergroten kansengelijkheid</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div id="content-vraag" class="content">
+                    <div class="grid-container-initiatieven">
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Beter Buren</h3>
+                                <p>Bemiddeling bij burengeschillen.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Bewonersvereniging Stek West</h3>
+                                <p>Combi statushouders/jongeren.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Bierbrouwerij de Prael</h3>
+                                <p>Brouwerij met grote maatschappelijke waarde.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Big Brothers Big Sisters Amsterdam</h3>
+                                <p>Mentorprogramma voor kinderen 5-18jr.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Bijstandsbond</h3>
+                                <p>Belangenbehartiging Bijstand</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="img/image_template.png" alt="featured img">
+                            <div>
+                                <h3>Blauw-Wit</h3>
+                                <p>Voetbalclub</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
-            <!-- Hier de overzicht van initiatieven -->
-            <main class="grid-container">
-                <article>
-                    <img src="img/image_template.png" alt="featured img">
-                    <div>
-                        <h3>Academie van de Stad</h3>
-                        <p>Koppelen van studenten aan praktijkopdrachten.</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/image_template.png" alt="featured img">
-                    <div>
-                        <h3>Actief computer centrum west</h3>
-                        <p>Computerlessen alle nivea’s.</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/image_template.png" alt="featured img">
-                    <div>
-                        <h3>Aknarij</h3>
-                        <p>
-                            Participatie/integratie bevorderen bij Marokkanse achterban.</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/image_template.png" alt="featured img">
-                    <div>
-                        <h3>Academie van de Stad</h3>
-                        <p>Koppelen van studenten aan praktijkopdrachten.</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/image_template.png" alt="featured img">
-                    <div>
-                        <h3>Actief computer centrum west</h3>
-                        <p>Computerlessen alle nivea’s.</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/image_template.png" alt="featured img">
-                    <div>
-                        <h3>Aknarij</h3>
-                        <p>
-                            Participatie/integratie bevorderen bij Marokkanse achterban.</p>
-                    </div>
-                </article>
-            </main>
-            <button type="button" class="button Button_see_all_initiatives" style="text-transform: uppercase;">
-                alle initiatieven bekijken
-            </button>
+            
+            <!-- Button naar initiatieven pagina -->
+            <div class="button-box">
+                <button type="button" class="button Button-See-all" style="text-transform: uppercase;">
+                    alles bekijken
+                </button>
+            </div>
+
+            <!-- Contact opnemen -->
+            <div class="contact">
+                <div class="contact-text">
+                    <h2 class="Heading-large">Contact</h2>
+                    <p>Heb jij vragen?<br>Neem dan contact met ons op!</p>
+                </div>
+                <div class="contact-form">
+                    <form method="POST">
+                        <input type="email" placeholder="Email" required>
+                        <button class="button Button-Submit">submit&nbsp;→</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Inloggen -->
+            <div class="sign-in">
+                <div class="signin-form">
+                    <form method="POST">
+                        <input type="text" placeholder="Name" required>
+                        <input type="password"  placeholder="Password" required>
+                        <label class="checkbox-container">Onthouden
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="signin-buttons">
+                            <button class="button Button_Signin ">Inloggen</button>
+                            <p> of </p>
+                            <button class="button Button_Signin ">Registreren</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="signin-text">
+                    <h2 class="Heading-large">Log in</h2>
+                    <p>Log in of maak snel een account aan om contact te kunnen opnemen met
+                        initiatief aanbieders bij jou in de buurt of zelf een nieuwe
+                        initiatief voor te stellen!</p>
+                </div>
+            </div>
         </section>
-    </main>
+
+        
+
 </body>
 </html>
