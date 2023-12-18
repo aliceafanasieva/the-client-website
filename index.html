@@ -35,9 +35,10 @@
         );
         }
     </script>
-    -->
+    
 
-    <div id="invertedcursor"></div>
+    <div id="invertedcursor"></div> --> 
+
 
     <!-- Header -->
     <header>
@@ -56,198 +57,227 @@
         </ul>
     </header>
 
-    <!--- link to js -->
-    <script type="text/javasript" src="js/script.js"></script>
 
     <!-- Home section -->
     <section class="home" id="home">
-            <div class="intro-box">
-                <div class="intro-box-text">
-                    <h1>platform<br>buurtinitiatieven<br>amsterdam west</h1>
-                    <p>
-                        Dit is de digitale platform speciaal gemaakt om de buurtbewoners van Amsterdam West met elkaar 
-                        te verbinden. Hier kunt u de vraag/aanbod van de initiatieven in deze buurt bekijken, contact 
-                        opnemen met de buren, elkaar helpen en ook eigen initiatieven voorstellen. 
-                    </p>
-                </div>
-                <div class="img-box">
-                    <img src="img/people_dance.png" alt="featured img">
-                </div>
+        <div class="intro-box">
+            <div class="intro-box-text">
+                <h1>platform<br>buurtinitiatieven<br>amsterdam west</h1>
+                <p>
+                    Dit is de digitale platform speciaal gemaakt om de buurtbewoners van Amsterdam West met elkaar 
+                    te verbinden. Hier kunt u de vraag/aanbod van de initiatieven in deze buurt bekijken, contact 
+                    opnemen met de buren, elkaar helpen en ook eigen initiatieven voorstellen. 
+                </p>
             </div>
-            <div class="container-initiatieven">
-                <div class="tabs-container">
-                    <button id="btn_aanbod" onclick="openAanbod">
-                        <i class="bx bx-message-add"></i>
-                        aanbod initiatieven
-                    </button>
-                    <button id="btn_vraag" onclick="openVraag">
-                        <i class="bx bx-search-alt"></i>
-                        vraag initiatieven
-                    </button>
-                </div>
-                <!-- Hier de overzicht van initiatieven -->
-                <!-- Aanbod -->
-                <div id="content_aanbod" class="content">
-                    <div class="grid-content">
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Academie van de Stad</h3>
-                                <p>Koppelen van studenten aan praktijkopdrachten.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Actief computer centrum west</h3>
-                                <p>Computerlessen alle nivea’s.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Aknarij</h3>
-                                <p>
-                                    Participatie/integratie bevorderen bij Marokkanse achterban.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Amsta</h3>
-                                <p>Zorg voor ouderen en gehandicapten.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Badhuis en Sauna Da Costa</h3>
-                                <p>Betaalbare en toegankelijke sauna door vrijwilligers</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Be connected</h3>
-                                <p>Jongerenplatform voor vergroten kansengelijkheid</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <!-- Vraag -->
-                <div id="content_vraag" class="content">
-                    <div class="grid-content">
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Beter Buren</h3>
-                                <p>Bemiddeling bij burengeschillen.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Bewonersvereniging Stek West</h3>
-                                <p>Combi statushouders/jongeren.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Bierbrouwerij de Prael</h3>
-                                <p>Brouwerij met grote maatschappelijke waarde.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Big Brothers Big Sisters Amsterdam</h3>
-                                <p>Mentorprogramma voor kinderen 5-18jr.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Bijstandsbond</h3>
-                                <p>Belangenbehartiging Bijstand</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="img/image_template.png" alt="featured img">
-                            <div>
-                                <h3>Blauw-Wit</h3>
-                                <p>Voetbalclub</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+            <div class="img-box">
+                <img src="img/people_dance.png" alt="featured img">
             </div>
-
-            <script>
-                var content_aanbod = document.getElementById("content_aanbod");
-                var content_vraag = document.getElementById("content_vraag");
-                var btn_aanbod = document.getElementById("btn_aanbod");
-                var btn_vraag =  document.getElementById("btn_vraag");
-
-                function openAanbod(){
-                    content_aanbod.style.transform = "translateX(0)";
-                    content_vraag.style.transform = "translateX(100%)";
-                }
-
-                function openVraag(){
-                    content_aanbod.style.transform = "translateX(100%)";
-                    content_vraag.style.transform = "translateX(0)";
-                }
-            </script>
-
-            <!-- Button naar initiatieven pagina -->
-            <div class="button-box">
-                <button type="button" class="button Button-See-all" style="text-transform: uppercase;">
-                    alles bekijken
+        </div>
+        <div class="container-initiatieven">
+            <div class="tabs-container">
+                <button id="btn_aanbod" onclick="openAanbod()">
+                    <i id="icon_aanbod" class="bx bx-message-add"></i>
+                    aanbod initiatieven
+                </button>
+                <button id="btn_vraag" onclick="openVraag()">
+                    <i id="icon_vraag" class="bx bx-search-alt"></i>
+                    vraag initiatieven
                 </button>
             </div>
-
-            <!-- Contact opnemen -->
-            <div class="contact">
-                <div class="contact-text">
-                    <h2>Contact</h2>
-                    <p>Heb jij vragen?<br>Neem dan contact met ons op!</p>
-                </div>
-                <div class="contact-form">
-                    <form method="POST">
-                        <input type="email" placeholder="Email" required>
-                        <button class="button Button-Submit">submit&nbsp;→</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Inloggen -->
-            <div class="sign-in">
-                <div class="signin-form">
-                    <form method="POST">
-                        <input type="text" placeholder="Name" required>
-                        <input type="password"  placeholder="Password" required>
-                        <label class="checkbox-container">Onthouden
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <div class="signin-buttons">
-                            <button class="button Button_Signin ">Inloggen</button>
-                            <p> of </p>
-                            <button class="button Button_Signin ">Registreren</button>
+            <!-- Hier de overzicht van initiatieven -->
+            <!-- Aanbod -->
+            <div id="content_aanbod" class="content">
+                <div class="grid-content">
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Academie van de Stad</h3>
+                            <p>Koppelen van studenten aan praktijkopdrachten.</p>
                         </div>
-                    </form>
-                </div>
-                <div class="signin-text">
-                    <h2>Log in</h2>
-                    <p>Log in of maak snel een account aan om contact te kunnen opnemen met
-                        initiatief aanbieders bij jou in de buurt of zelf een nieuwe
-                        initiatief voor te stellen!</p>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Actief computer centrum west</h3>
+                            <p>Computerlessen alle nivea’s.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Aknarij</h3>
+                            <p>
+                                Participatie/integratie bevorderen bij Marokkanse achterban.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Amsta</h3>
+                            <p>Zorg voor ouderen en gehandicapten.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Badhuis en Sauna Da Costa</h3>
+                            <p>Betaalbare en toegankelijke sauna door vrijwilligers</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Be connected</h3>
+                            <p>Jongerenplatform voor vergroten kansengelijkheid</p>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </section>
+            <!-- Vraag -->
+            <div id="content_vraag" class="content">
+                <div class="grid-content">
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Beter Buren</h3>
+                            <p>Bemiddeling bij burengeschillen.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Bewonersvereniging Stek West</h3>
+                            <p>Combi statushouders/jongeren.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Bierbrouwerij de Prael</h3>
+                            <p>Brouwerij met grote maatschappelijke waarde.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Big Brothers Big Sisters Amsterdam</h3>
+                            <p>Mentorprogramma voor kinderen 5-18jr.</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Bijstandsbond</h3>
+                            <p>Belangenbehartiging Bijstand</p>
+                        </div>
+                    </article>
+                    <article class="init_box">
+                        <img src="img/image_template.png" alt="featured img">
+                        <div>
+                            <h3>Blauw-Wit</h3>
+                            <p>Voetbalclub</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
 
+        <!-- Button naar initiatieven pagina -->
+        <div class="button-box">
+            <button type="button" class="button Button-See-all" style="text-transform: uppercase;">
+                alles bekijken
+            </button>
+        </div>
+
+        <!-- Contact opnemen -->
+        <div class="contact">
+            <div class="contact-text">
+                <h2>Contact</h2>
+                <p>Heb jij vragen?<br>Neem dan contact met ons op!</p>
+            </div>
+            <div class="contact-form">
+                <form method="POST">
+                    <input type="email" placeholder="Email" required>
+                    <button class="button Button-Submit">submit&nbsp;→</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Inloggen -->
+        <div class="sign-in">
+            <div class="signin-form">
+                <form method="POST">
+                    <input type="text" placeholder="Name" required>
+                    <input type="password"  placeholder="Password" required>
+                    <label class="checkbox-container">Onthouden
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="signin-buttons">
+                        <button class="button Button_Signin ">Inloggen</button>
+                        <p> of </p>
+                        <button class="button Button_Signin ">Registreren</button>
+                    </div>
+                </form>
+            </div>
+            <div class="signin-text">
+                <h2>Log in</h2>
+                <p>Log in of maak snel een account aan om contact te kunnen opnemen met
+                    initiatief aanbieders bij jou in de buurt of zelf een nieuwe
+                    initiatief voor te stellen!</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Script for Initiatieven Aanbod/Vraag tabs switching -->
+
+    <script>
+        var content_aanbod = document.getElementById("content_aanbod");
+        var content_vraag = document.getElementById("content_vraag");
+        var btn_aanbod = document.getElementById("btn_aanbod");
+        var btn_vraag =  document.getElementById("btn_vraag");
+        var icon_aanbod = document.getElementById("icon_aanbod");
+        var icon_vraag = document.getElementById("icon_vraag");
+
+        function openAanbod(){
+            content_aanbod.style.transform = "translateX(0)";
+            content_vraag.style.transform = "translateX(102%)";
+
+            btn_aanbod.style.backgroundColor = "var(--active-button-color)";
+            btn_aanbod.style.color = "var(--active-button-text-color)";
+            icon_aanbod.style.color = "var(--active-button-text-color)";
+
+            btn_vraag.style.backgroundColor = "var(--background-color)";
+            btn_vraag.style.color = "var(--base-text-color)";
+            icon_vraag.style.color = "var(--base-text-color)";
+            icon_vraag.style.backgroundColor = "transparent";
+
+            content_aanbod.style.transitionDelay = "0.3s"
+            content_vraag.style.transitionDelay = "0s"
+        }
         
+        function openVraag(){
+            content_aanbod.style.transform = "translateX(102%)";
+            content_vraag.style.transform = "translateX(0)";
+
+            btn_vraag.style.backgroundColor = "var(--active-button-color)";
+            btn_vraag.style.color = "var(--active-button-text-color)";
+            icon_vraag.style.color = "var(--active-button-text-color)";
+
+            btn_aanbod.style.backgroundColor = "var(--background-color)";
+            btn_aanbod.style.color = "var(--base-text-color)";
+            icon_aanbod.style.color = "var(--base-text-color)";
+            icon_aanbod.style.backgroundColor = "transparent";
+            
+            content_vraag.style.transitionDelay = "0.3s"
+            content_aanbod.style.transitionDelay = "0s"
+        }
+
+    </script>
+    
 
 </body>
+
 </html>

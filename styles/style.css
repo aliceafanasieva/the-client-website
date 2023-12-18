@@ -274,17 +274,20 @@ section {
     transition: 0.3s;
 }
 
+/* 
+   !!!!!!!!!!!!!!!!!                                                               !!!!!!!!!!!!!!!!!
+   !!!!!!!!!!!!!!!!!   MOET LATER PROBLEEM OPLOSSEN DAT ER GEEN HOVER MEER IS      !!!!!!!!!!!!!!!!!
+   !!!!!!!!!!!!!!!!!                                                               !!!!!!!!!!!!!!!!! 
+ */
+
 .tabs-container button:hover {
     background-color: var(--active-button-color);
     color: var(--active-button-text-color);
-    border: var(--btn-border);
-    border-bottom: none;
 }
 
 .tabs-container button:hover .bx{
     color: var(--active-button-text-color);
 }
-
 
 .content {
     width: 100%;
@@ -293,7 +296,8 @@ section {
     align-items: center;
     margin: 0 auto;
     position: absolute;
-    transform: translateX(100%);
+    transform: translateX(102%);
+    transition: 0.3s;
 }
 
 /* Grid */
@@ -307,7 +311,16 @@ section {
     row-gap: 10%;
 }
 
-article img {
+.init_box{
+    transition: 0.3s;
+}
+
+.init_box:hover {
+    padding: 6px;
+    cursor: pointer;
+}
+
+.init_box img {
     width: 100%;
 }
 
@@ -315,11 +328,16 @@ article img {
     transform: translateX(0px);
 }
 
-#btn_aanbod, #btn_aanbod .bx {
+#btn_aanbod {
     background-color: var(--active-button-color);
     color: var(--active-button-text-color);
     border: var(--btn-border);
     border-bottom: none;
+}
+
+#icon_aanbod {
+    color: var(--active-button-text-color);
+    background-color: var(--active-button-color);
 }
 
 /* Button */
