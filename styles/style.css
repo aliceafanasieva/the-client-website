@@ -11,15 +11,17 @@
     --base-text-color: rgb(0,0,0);
     --active-button-text-color: rgb(255, 255, 255);
     --active-button-color: rgb(0, 0, 0);
-    --primary-decorative-color: rgb(21, 173, 255);
+    --primary-decorative-color: rgb(0, 255, 255);
     --second-decorative-color: rgb(44, 255, 44);
-    --third-decorative-color: rgb(183, 255, 115);
-    --border-color: rgb(0, 0, 0);
+    --clr-highlight: rgb(191, 255, 132);
+    --clr-border: rgb(0, 0, 0);
     /* Titles */
     --heading-titles-font-size: 1.953rem;
     --heading-titles-font-weight: 500;
     --tabs-titles-font-size: 0.97rem;
     --tabs-titles-font-weight: 400;
+    /* Buttons */
+    --btn-border: 1px solid rgb(0, 0, 0);
     /* Navigation */
     --nav-font-size: 0.8rem;
     --nav-hallen-font-size: 0.88rem;
@@ -51,7 +53,6 @@ body {
     overflow-x: hidden;
 }
 
-
 /*
 #invertedcursor {
   position: absolute;
@@ -67,6 +68,19 @@ body {
   transition: transform .2s;
 }*/
 
+/* Heading Styles */
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: var(--heading-titles-font-size);
+    text-transform: uppercase;
+    font-weight: var(--heading-titles-font-weight);
+    margin-bottom: 10px;
+}
 
 /* Navigation bar */
 
@@ -81,7 +95,7 @@ header {
     overflow: hidden;
     background-color: var(--background-color);
     transition: ease .40s;
-    border-bottom: 1.5px solid var(--border-color);
+    border-bottom: 1.5px solid var(--clr-border);
     z-index: 10000;
 }
 
@@ -91,7 +105,7 @@ header {
     font-weight: 400;
     text-transform: uppercase;
     white-space: nowrap;
-    display: none;
+    display: hidden;
 }
 
 .items{
@@ -107,24 +121,6 @@ header {
     display: inline-block;
 }
 
-/* A link to De Hallen website as a way of showing the "connection" between two organisations */
-.dehallen {
-    display: flex;
-    flex-wrap: nowrap;
-    font-size: var(--nav-hallen-font-size);
-    order: 2;
-    margin: 10px 0px 10px 30px;
-}
-
-/* Menu icon is hidden on desktop layout, but will appear by screen width < 1020px */
-#menu-icon {
-    color: #000;
-    font-size: 25px;
-    font-weight: 100;
-    cursor: pointer;
-    display: none;
-}
-
 .nav {
     list-style: none;
     display: flex;
@@ -134,12 +130,30 @@ header {
     order: 1;
 }
 
+/* A link to De Hallen website as a way of showing the "connection" between two organisations */
+.dehallen {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: var(--nav-hallen-font-size);
+    margin: 10px 0px 10px 30px;
+    order: 2;
+}
+
 .nav a, .dehallen a {
     list-style: none;
     font-weight: 400;
     text-decoration: none;
     color: var(--base-text-color);
     white-space: nowrap;
+}
+
+/* Menu icon is hidden on desktop layout, but will appear by screen width < 1020px */
+#menu-icon {
+    color: #000;
+    font-size: 25px;
+    font-weight: 100;
+    cursor: pointer;
+    display: none;
 }
 
 
@@ -162,7 +176,7 @@ header {
 /* Hover for a link to De Hallen */
 
 .dehallen a:hover {
-    color: var(--third-decorative-color);
+    color: var(--clr-highlight);
 }
 
 
@@ -192,18 +206,17 @@ section {
     padding: 0px 30px 0px 0px;
 }
 
-.intro-title {
-    font-size: 3.5rem;
-    font-weight: 400;
+.intro-box-text h1{
     text-transform: uppercase;
     margin-bottom: 50px;
 }
 
-.intro-box p {
+.intro-box-text p {
     height: 100px;
     max-width: 29em;
+    font-weight: 400;
     font-family: var(--secundary-font-stack);
-    font-size: 17px;
+    font-size: 1.063rem;
     line-height: 1.5em;
     text-align: justify;
     width: 100%;
@@ -219,11 +232,21 @@ section {
 }
 
 
+/* Hier begint de preview van initiatieven  */
+
+.container-initiatieven {
+    width: 100%;
+    height: 58rem;
+    position: relative;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
 /* Tabs die Vraag- Aanbod van initiatieven laten zien */
 
 .tabs-container {
     display: flex;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--clr-border);
     margin: 0 0 50px;
 }
 
@@ -231,7 +254,7 @@ section {
     font-size: var(--tabs-titles-font-size);
     font-weight: var(--tabs-titles-font-weight);
     cursor: pointer;
-    border: 1px solid var(--border-color);
+    border: var(--btn-border);
     border-bottom: none;
     outline: none;
     padding: 10px 32px 15px;
@@ -251,10 +274,10 @@ section {
     transition: 0.3s;
 }
 
-.tabs-container button:hover{
+.tabs-container button:hover {
     background-color: var(--active-button-color);
     color: var(--active-button-text-color);
-    border: 1px solid var(--border-color);
+    border: var(--btn-border);
     border-bottom: none;
 }
 
@@ -262,56 +285,42 @@ section {
     color: var(--active-button-text-color);
 }
 
-.container-initiatieven {
-    overflow: hidden;
-    position: relative;
-    z-index: 9999;
-}
 
-/* 
----------------------------------------------------------------------------------------
-    VRAGEN - HOE KAN IK HET ZO DOEN DAT HET NIET BOVEN DE NAVIGATIE KOMT STAAN? 
----------------------------------------------------------------------------------------
-*/
-
-/*
-.container-initiatieven .content {
-    transform: translateX(100%);
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     position: absolute;
+    transform: translateX(100%);
 }
-
-/* Actief Aanbod Tab */
-
-/*
-#content-aanbod {
-    transform: translateX(0px);
-}
-
-#btn1, #btn1 .bx{
-    background-color: var(--active-button-color);
-    color: var(--active-button-text-color);
-}
-*/
-/* Actief Vraag Tab */
-
-
 
 /* Grid */
 
-.grid-container-initiatieven {
+.grid-content {
     display: grid;
-    margin: 55px auto 125px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
     width: 100%;
     column-gap: 7%;
     row-gap: 10%;
-    grid-template-columns: repeat(3, 1fr);
 }
 
 article img {
     width: 100%;
-    height: 80%;
 }
 
+#content_aanbod {
+    transform: translateX(0px);
+}
+
+#btn_aanbod, #btn_aanbod .bx {
+    background-color: var(--active-button-color);
+    color: var(--active-button-text-color);
+    border: var(--btn-border);
+    border-bottom: none;
+}
 
 /* Button */
 
@@ -321,12 +330,12 @@ article img {
     display: inline-block;
     transition-duration: 0.2s;
     cursor: pointer;
-    border: 1px solid var(--border-color);
+    border: var(--btn-border);
     text-transform: uppercase;
     font-size: var(--button-font-size);
   }
 
-.button a{
+.button a {
     background-color: var(--background-color); 
     color: var(--base-text-color); 
 }
@@ -352,15 +361,15 @@ article img {
 
 .Button-Submit {
     border: 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: var(--btn-border);
     margin-left: 4%;
     padding: 5px 3px;
 }
 
 .Button-Submit:hover {
     background-color: transparent;
-    border-bottom: 1px solid var(--third-decorative-color);
-    color: var(--third-decorative-color);
+    border-bottom: 1px solid var(--clr-highlight);
+    color: var(--clr-highlight);
 }
 
 /* Button Login & Register */
@@ -369,17 +378,6 @@ article img {
 .Button_Signin {
     margin: 0px;
 }
-
-
-/* Large Heading */
-
-.Heading-large{
-    font-size: var(--heading-titles-font-size);
-    text-transform: uppercase;
-    font-weight: var(--heading-titles-font-weight);
-    margin-bottom: 10px;
-}
-
 
 /* Contact Form */
 
@@ -408,7 +406,7 @@ article img {
 .contact-form input{
     font-size: var(--input-font-size);
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: var(--btn-border);
     outline: none;
     background-color: transparent;
     width: 20rem;
@@ -454,7 +452,7 @@ article img {
   
   /* When the checkbox is checked, add a black background */
 .checkbox-container input:checked ~ .checkmark {
-    background-color: #000000;
+    background-color: var(--base-text-color);
 }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -512,7 +510,7 @@ article img {
     width: 100%;
     font-size: var(--input-font-size);
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: var(--btn-border);
     outline: none;
     background-color: transparent;
     padding: 5px 10px;

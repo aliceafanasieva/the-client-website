@@ -41,7 +41,7 @@
 
     <!-- Header -->
     <header>
-        <a href="" class="logo">Buurtinitiatieven Amsterdam West</a>
+        <a href="" class="logo">PBAW</a>
         <div class="bx bx-menu" id="menu-icon"></div>
         <li class="dehallen"><a href="https://dehallen-amsterdam.nl" target="_blank">De Hallen</a></li>
         <!-- Hier de navigatie bar boven de website -->
@@ -63,7 +63,7 @@
     <section class="home" id="home">
             <div class="intro-box">
                 <div class="intro-box-text">
-                    <div class="intro-title">platform<br>buurtinitiatieven<br>amsterdam west</div>
+                    <h1>platform<br>buurtinitiatieven<br>amsterdam west</h1>
                     <p>
                         Dit is de digitale platform speciaal gemaakt om de buurtbewoners van Amsterdam West met elkaar 
                         te verbinden. Hier kunt u de vraag/aanbod van de initiatieven in deze buurt bekijken, contact 
@@ -76,18 +76,19 @@
             </div>
             <div class="container-initiatieven">
                 <div class="tabs-container">
-                    <button id="btn1">
+                    <button id="btn_aanbod" onclick="openAanbod">
                         <i class="bx bx-message-add"></i>
                         aanbod initiatieven
                     </button>
-                    <button id="btn2">
+                    <button id="btn_vraag" onclick="openVraag">
                         <i class="bx bx-search-alt"></i>
                         vraag initiatieven
                     </button>
                 </div>
                 <!-- Hier de overzicht van initiatieven -->
-                <div id="content-aanbod" class="content">
-                    <div class="grid-container-initiatieven">
+                <!-- Aanbod -->
+                <div id="content_aanbod" class="content">
+                    <div class="grid-content">
                         <article>
                             <img src="img/image_template.png" alt="featured img">
                             <div>
@@ -133,8 +134,9 @@
                         </article>
                     </div>
                 </div>
-                <div id="content-vraag" class="content">
-                    <div class="grid-container-initiatieven">
+                <!-- Vraag -->
+                <div id="content_vraag" class="content">
+                    <div class="grid-content">
                         <article>
                             <img src="img/image_template.png" alt="featured img">
                             <div>
@@ -180,7 +182,24 @@
                     </div>
                 </div>
             </div>
-            
+
+            <script>
+                var content_aanbod = document.getElementById("content_aanbod");
+                var content_vraag = document.getElementById("content_vraag");
+                var btn_aanbod = document.getElementById("btn_aanbod");
+                var btn_vraag =  document.getElementById("btn_vraag");
+
+                function openAanbod(){
+                    content_aanbod.style.transform = "translateX(0)";
+                    content_vraag.style.transform = "translateX(100%)";
+                }
+
+                function openVraag(){
+                    content_aanbod.style.transform = "translateX(100%)";
+                    content_vraag.style.transform = "translateX(0)";
+                }
+            </script>
+
             <!-- Button naar initiatieven pagina -->
             <div class="button-box">
                 <button type="button" class="button Button-See-all" style="text-transform: uppercase;">
@@ -191,7 +210,7 @@
             <!-- Contact opnemen -->
             <div class="contact">
                 <div class="contact-text">
-                    <h2 class="Heading-large">Contact</h2>
+                    <h2>Contact</h2>
                     <p>Heb jij vragen?<br>Neem dan contact met ons op!</p>
                 </div>
                 <div class="contact-form">
@@ -220,7 +239,7 @@
                     </form>
                 </div>
                 <div class="signin-text">
-                    <h2 class="Heading-large">Log in</h2>
+                    <h2>Log in</h2>
                     <p>Log in of maak snel een account aan om contact te kunnen opnemen met
                         initiatief aanbieders bij jou in de buurt of zelf een nieuwe
                         initiatief voor te stellen!</p>
