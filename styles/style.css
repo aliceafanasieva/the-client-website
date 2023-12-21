@@ -18,18 +18,23 @@
     /* Titles */
     --heading-titles-font-size: 1.953rem;
     --heading-titles-font-weight: 500;
-    --tabs-titles-font-size: 0.97rem;
+    --title-small-font-size: .9rem;
+    --title-small-font-weight: 400;
     --tabs-titles-font-weight: 400;
     /* Buttons */
-    --btn-border: 1px solid rgb(0, 0, 0);
+    --btn-border: 1px solid var(--clr-border);
     /* Navigation */
     --nav-font-size: 0.8rem;
     --nav-hallen-font-size: 0.88rem;
-    /* Form font size */
+    /* Font size */
     --checkbox-font-size: 0.9rem;
     --input-font-size: 0.85rem;
     --button-font-size: 0.8rem;
     --small-text-font-size: 0.8rem;
+    --tabs-titles-font-size: 0.97rem;
+    --p-medium-font-size: 1.063rem;
+    --p-small-font-size: 0.938rem;
+    --p-line-height: 1.6rem;
 }
 
 * {
@@ -45,6 +50,7 @@
 }
 
 body {
+    height: 100%;
     /*cursor: none;*/
     margin: 0;
     min-height: 100vh;
@@ -82,9 +88,17 @@ h2 {
     margin-bottom: 10px;
 }
 
+h3 {
+    font-size: var(--title-small-font-size);
+    text-transform: uppercase;
+    font-weight: var(--title-small-font-weight);
+    padding: 5px 0px;
+}
+
 /* Navigation bar */
 
 header {
+    height: 4rem;
     position: sticky;
     top: 0;
     width: 100%;
@@ -182,11 +196,9 @@ header {
 
 /* Hier begin ik met homepagina zelf */
 
-section {
-    padding: 100px 18% 0;
-}
 
 .home {
+    padding: 100px 18% 0;
     display: inline-block;
     max-width: 1600px;
     margin: 0px auto;
@@ -216,8 +228,8 @@ section {
     max-width: 29em;
     font-weight: 400;
     font-family: var(--secundary-font-stack);
-    font-size: 1.063rem;
-    line-height: 1.5em;
+    font-size: var(--p-medium-font-size);
+    line-height: var(--p-line-height);
     text-align: justify;
     width: 100%;
 }
@@ -311,6 +323,8 @@ section {
     row-gap: 10%;
 }
 
+/* Article met initiatief plaatje, naam en beschijving */ 
+
 .init_box{
     transition: 0.3s;
 }
@@ -322,6 +336,10 @@ section {
 
 .init_box img {
     width: 100%;
+}
+
+.init_box p {
+    font-size: var(--p-small-font-size);
 }
 
 #content_aanbod {
@@ -380,8 +398,8 @@ section {
 .Button-Submit {
     border: 0;
     border-bottom: var(--btn-border);
-    margin-left: 4%;
-    padding: 5px 3px;
+    padding: 0 0 5px 0;
+    width: 4.5rem;
 }
 
 .Button-Submit:hover {
@@ -391,7 +409,6 @@ section {
 }
 
 /* Button Login & Register */
-
 
 .Button_Signin {
     margin: 0px;
@@ -418,7 +435,23 @@ section {
 .contact-form form {
     margin: 30px auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.contact-form form:nth-child(3) {
+    align-items: flex-end;
+}
+
+.contact-form textarea {
+    font-size: var(--input-font-size);
+    border: none;
+    border-bottom: var(--btn-border);
+    outline: none;
+    background-color: transparent;
+    width: 20rem;
+    padding: 5px 10px 5px 0px;
+    margin-bottom: 1.3rem;
+    height: 4rem;
 }
 
 .contact-form input{
@@ -428,13 +461,9 @@ section {
     outline: none;
     background-color: transparent;
     width: 20rem;
-    padding: 5px 10px;
+    margin-bottom: 1.3rem;
+    padding: 5px 10px 5px 0px;
 }
-
-.contact-form button{
-    text-align: left;
-}
-
 
 /* Checkbox */
 

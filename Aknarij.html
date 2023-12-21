@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
+    <title>Aknarij - PBAW</title>
+    <!-- Icons source Boxicons.com -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="js_files/cursor.js"></script>
+    <script src="js_files/tabs.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+
+
+    <style>
+    .grid-initiative-section {
+        display: grid;
+        grid-template-columns: repeat(12,minmax(0,1fr));
+    } 
+
+    .image-container {
+        grid-column: span 5/span 6;
+        position: relative;
+        height: 40.62rem;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .initiative-information-container {
+        grid-column: span 7/span 6;
+        padding: 3rem 4rem 3rem 4rem;
+    }
+
+    .initiative-information-container p {
+        font-family: var(--secundary-font-stack);
+        font-size: var(--p-small-font-size);
+        line-height: var(--p-line-height);
+        text-align: justify;
+        min-width: 250px;
+    }
+
+    h2 {
+        padding-bottom: 2rem;
+    }
+
+    .par-container {
+        min-width: 600px;
+        padding-bottom: 2rem;
+    }
+
+    .container-btn-aanmeld-terug {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .Button-Terug {
+        width: 12rem;
+    }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+
+    <!-- Header -->
+    <header>
+        <a href="http://127.0.0.1:5501/index.html" class="logo">PBAW</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <li class="dehallen"><a href="https://dehallen-amsterdam.nl" target="_blank">De Hallen</a></li>
+        <!-- Hier de navigatie bar boven de website -->
+        <ul class="nav">
+            <ul class="items">
+                <li class="item"><a href="">Over ons</a></li>
+                <li class="item"><a href="">Initiatieven</a></li>
+                <li class="item"><a href="">Aanvraag indienen</a></li>
+                <li class="item"><a href="">Contact</a></li>
+                <li class="item"><a href="">Account</a></li>
+            </ul>
+        </ul>
+    </header>
+
+
+    <main class="main-initiative-section">
+        <section class="grid-initiative-section">
+            <div class="image-container">
+                <img src="img/image_template.png" alt="Initiative image">
+            </div>
+            <div class="initiative-information-container">
+                <h2>Aknarij</h2>
+                <div class="par-container">
+                    <p>Stichting Aknarijwest is opgericht door een groep enthousiaste Amsterdamse
+                        jongeren met een Marokkaanse achtergrond. Primair zet Aknarijwest zich
+                        in voor participatie en integratie van haar achterban in de Nederlandse
+                        samenleving. Aknarijwest hecht groot belang aan een maatschappelijk klimaat
+                        waarin gelijkheid en solidariteit vanzelfsprekend zijn en wil graag een bijdrage
+                        leveren in het bereiken van sociale cohesie tussen verschillende bevolkingsgroepen 
+                        in Amsterdam. Stichting Aknarijwest vindt het belangrijk om actuele thema's aan 
+                        de orde te stellen en hier diverse groepen uit de Amsterdamse samenleving bij te
+                        betrekken en met elkaar in gesprek te laten gaan. Het gesprek met elkaar aangaan
+                        draagt bij aan meer begrip voor elkaar en de acceptatie van elkaars verschillen.
+                    </p>
+                </div>
+                <div class="par-container">
+                    <p>adres:  Karel Doormanstraat 125, 1055 VE Amsterdam</p>
+                </div>
+                <div class="par-container">
+                    <p>contact:  +31 6 47077521</p>
+                </div>
+                <div class="container-btn-aanmeld-terug">
+                    <button id="btn_aanmelden" class="button">Aanmelden</button>
+                    <button id="btn_terug" class="button Button-Submit Button-Terug">Terug naar overzicht &nbsp;→</button>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+
+    </section>
+
+
+    <!-- Script for Initiatieven Aanbod/Vraag tabs switching -->
+
+    <script>
+        var content_aanbod = document.getElementById("content_aanbod");
+        var content_vraag = document.getElementById("content_vraag");
+        var btn_aanbod = document.getElementById("btn_aanbod");
+        var btn_vraag =  document.getElementById("btn_vraag");
+        var icon_aanbod = document.getElementById("icon_aanbod");
+        var icon_vraag = document.getElementById("icon_vraag");
+
+        function openAanbod(){
+            content_aanbod.style.transform = "translateX(0)";
+            content_vraag.style.transform = "translateX(102%)";
+
+            btn_aanbod.style.backgroundColor = "var(--active-button-color)";
+            btn_aanbod.style.color = "var(--active-button-text-color)";
+            icon_aanbod.style.color = "var(--active-button-text-color)";
+
+            btn_vraag.style.backgroundColor = "var(--background-color)";
+            btn_vraag.style.color = "var(--base-text-color)";
+            icon_vraag.style.color = "var(--base-text-color)";
+            icon_vraag.style.backgroundColor = "transparent";
+
+            content_aanbod.style.transitionDelay = "0.3s"
+            content_vraag.style.transitionDelay = "0s"
+        }
+        
+        function openVraag(){
+            content_aanbod.style.transform = "translateX(102%)";
+            content_vraag.style.transform = "translateX(0)";
+
+            btn_vraag.style.backgroundColor = "var(--active-button-color)";
+            btn_vraag.style.color = "var(--active-button-text-color)";
+            icon_vraag.style.color = "var(--active-button-text-color)";
+
+            btn_aanbod.style.backgroundColor = "var(--background-color)";
+            btn_aanbod.style.color = "var(--base-text-color)";
+            icon_aanbod.style.color = "var(--base-text-color)";
+            icon_aanbod.style.backgroundColor = "transparent";
+            
+            content_vraag.style.transitionDelay = "0.3s"
+            content_aanbod.style.transitionDelay = "0s"
+        }
+
+    </script>
+    
+
+</body>
+
+</html>
